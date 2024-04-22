@@ -3,7 +3,7 @@
 #include<windows.h>
 
  using namespace std;
-
+char name[50];
  int snaketaillen;
  int snaketailx[100];
  int snaketaily[100];
@@ -60,7 +60,9 @@ for(int i= 0;i<height;i++){
             }
 
 }cout<<endl;
-}
+}for(int i= 0;i<width+2;i++){
+
+            cout<<"-";}
 }
 void rungame(){
 if(x==fcordx && y == fcordy){
@@ -127,14 +129,36 @@ void userinput() {
         }
     }
 }
+class highscore{
+public:
+    string maxname= "";
+    int maximum = 0 ;
+    string names[5];
+    int scores[5];
+int sorts(){
+for(int i = 0 ; i<5;i++){
+        for(int j = i ; j<5;j++){
+    if(scores[j]>maximum){ maximum = scores[j];
+        maxname = names[j];
+    }scores[i]=maximum;
+    names[i]=maxname;
+        }
+}
+}
+};
 
 
 int main(){
+cout<<"enter player name";
+cin>>name;
+
 initial();
 while(!gover){
     game();
     userinput();
     rungame();
+    cout<<endl<<"player name" << name<<endl;
+    cout<<endl<<name<<"'s"<<score;
 }
 return 0;
 }

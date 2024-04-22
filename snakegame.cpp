@@ -11,28 +11,27 @@
  enum snakedir{STOP = 0, LEFT ,RIGHT,UP , DOWN};
  snakedir sdir;
  int playerscore;
- int width=70;
- int height = 100;
+ int width=100;
+ int height =20;
 
 void game(){
 for(int i= 0;i<width+2;i++){
 
             cout<<"-";
 }cout<<endl;
-for(int i= 0;i<width+2;i++){
-        for(int j = 0 ; j<height;j++){
-            if(j == 0||j==height){
-                cout<<"|" ;
-                if(j==width){
-                    cout<<endl;
-                }         }
-                else{
-                    cout<<" ";
+for(int i= 0;i<height;i++){
+        for(int j = 0 ; j<width+2;j++){
+            if(j == 0){
+                cout<<"|" ;}
+                if(j == width){
+                    cout<<"}"<<endl;
                 }
+        }
+
+
 
 }
 
-}
 }
 int main(){
 game();
